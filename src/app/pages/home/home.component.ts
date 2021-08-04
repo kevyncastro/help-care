@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   public card = [];
   public noContent = true;
   public data = null;
+  public video = null;
 
   constructor(private injuriesService: InjuriesService, private firestore: AngularFirestore) { }
 
@@ -31,24 +32,21 @@ export class HomeComponent implements OnInit {
   getInjuriesList() {
     this.injuriesService.subscribeToInjuries().subscribe((data) => {
       const newData: any = data.payload.data();
-      console.log(newData);
       this.list = newData?.List;
     })
   }
 
   select(item: string) {
-    console.log(item);
     this.selected = !this.selected;
     this.search = '';
     this.firestore.collection('Injuries').doc(item).snapshotChanges().subscribe((data) => {
       if(data) {
-        console.log(data.payload.data());
         const newData: any = data.payload.data();
         this.data = newData;
         this.descriptions = newData?.Description;
         this.title = newData?.Title;
         this.images = newData?.images;
-        console.log(this.descriptions);
+        this.video = newData?.video;
       }
     })
   }

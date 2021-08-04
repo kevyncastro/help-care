@@ -49,11 +49,23 @@
     <div class="injury-list">
       <div class="injury-card" *ngFor="let description of descriptions | search: search; let i = index" (click)="select(item);">
         <mat-card>
-          <mat-card-title *ngIf="title?.length && title[i]">{{ title[i] }}</mat-card-title>
+          <mat-card-title><p>Step {{i+1}}:</p></mat-card-title>
+          <mat-card-title *ngIf="title?.length && title[i]"><p>{{ title[i] }}</p></mat-card-title>
           <mat-card-content *ngIf="description">{{ description }}</mat-card-content>
           <mat-card-content *ngIf="images?.length && images[i]"><img src="{{images[i]}}"></mat-card-content>
         </mat-card>
       </div>
+    </div>
+    <div class="injury-list" *ngIf="video">
+      <mat-card class="injury-card">
+        <mat-card-content>
+          <vg-player>
+            <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                <source src="{{video}}" type="video/mp4">
+            </video>
+        </vg-player>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 
