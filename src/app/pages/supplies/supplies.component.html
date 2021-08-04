@@ -1,14 +1,16 @@
-<mat-drawer-container class="" autosize>
+<mat-drawer-container class="cont" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
-    <div class="nav-button">
-      <a routerLink="/injuries" class="button" mat-raised-button>
-        INJURIES
-      </a>
-    </div>
-    <div class="nav-button">
-      <a routerLink="/supplies" class="button" mat-raised-button>
-        SUPPLIES
-      </a>
+    <div class="button-list">
+      <div class="nav-button">
+        <a routerLink="/injuries" class="nav-button" mat-raised-button>
+          INJURIES
+        </a>
+      </div>
+      <div class="nav-button">
+        <a routerLink="/supplies" class="nav-button" mat-raised-button>
+          SUPPLIES
+        </a>
+      </div>
     </div>
   </mat-drawer>
 
@@ -19,9 +21,10 @@
   </div>
 
   <div class="search">
-    <div class="mx-2 home">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon class="mx-2 home">home</mat-icon>
+
+    <div class="home">
+      <button mat-fab color="warn" type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon class="">menu</mat-icon>
       </button>
     </div>
     <mat-form-field class="form-field" appearance="fill">

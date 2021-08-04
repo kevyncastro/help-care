@@ -1,14 +1,16 @@
 <mat-drawer-container class="cont" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
-    <div class="nav-button">
-      <a routerLink="/injuries" class="button" mat-raised-button>
-        INJURIES
-      </a>
-    </div>
-    <div class="nav-button">
-      <a routerLink="/supplies" class="button" mat-raised-button>
-        SUPPLIES
-      </a>
+    <div class="button-list">
+      <div class="nav-button">
+        <a routerLink="/injuries" class="nav-button" mat-raised-button>
+          INJURIES
+        </a>
+      </div>
+      <div class="nav-button">
+        <a routerLink="/supplies" class="nav-button" mat-raised-button>
+          SUPPLIES
+        </a>
+      </div>
     </div>
   </mat-drawer>
 
@@ -19,9 +21,10 @@
   </div>
 
   <div class="search">
-    <div class="mx-2 home">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon class="mx-2 home">home</mat-icon>
+
+    <div class="home">
+      <button mat-fab color="warn" type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon class="">menu</mat-icon>
       </button>
     </div>
     <mat-form-field class="form-field" appearance="fill">
@@ -45,21 +48,21 @@
   </mat-card>
 
   <div *ngIf="selected" class="list-container">
-    <div class="injury-list" *ngIf="!data">
+    <div class="injury-header" *ngIf="!data">
       <div class="injury-card" (click)="select(item)">
         <mat-card>
-          <mat-card-title>No Data - Back</mat-card-title>
+          <mat-card-title>No Data</mat-card-title>
         </mat-card>
       </div>
     </div>
-    <div class="injury-list">
+    <div class="injury-header">
       <mat-card class="injury-card">
         <mat-card-title>
           {{injury}}
         </mat-card-title>
       </mat-card>
     </div>
-    <div class="injury-list">
+    <div *ngIf="title?.length || description || images?.length" class="injury-list">
       <div class="injury-card" *ngFor="let description of descriptions | search: search; let i = index" (click)="select(item);">
         <mat-card>
           <mat-card-title><p>Step {{i+1}}:</p></mat-card-title>
@@ -69,7 +72,7 @@
         </mat-card>
       </div>
     </div>
-    <div class="injury-list" *ngIf="video">
+    <div class="injury-header" *ngIf="video">
       <mat-card class="injury-card">
         <mat-card-content>
           <vg-player>
