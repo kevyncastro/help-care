@@ -17,21 +17,10 @@ export class SuppliesComponent implements OnInit {
     'Favipiravir',
     'Tocilizumab',
     'Oxygen Concentrator',
-    'Oxygen Tank',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'Oxygen Tank'
   ]
+
+  public search = '';
 
   constructor() { }
 

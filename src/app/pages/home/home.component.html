@@ -1,18 +1,18 @@
-<mat-drawer-container class="" autosize>
+<mat-drawer-container class="cont" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <div class="nav-button">
-      <button class="button" mat-raised-button>
-        injuries
-      </button>
+      <a routerLink="/injuries" class="button" mat-raised-button>
+        INJURIES
+      </a>
     </div>
     <div class="nav-button">
-      <button class="button" mat-raised-button>
-        supplies
-      </button>
+      <a routerLink="/supplies" class="button" mat-raised-button>
+        SUPPLIES
+      </a>
     </div>
   </mat-drawer>
 
-  <div class="content">
+  <div class="">
     <button type="button" mat-button (click)="drawer.toggle()">
       Toggle sidenav
     </button>
@@ -37,5 +37,4 @@
       </div>
     </div>
   </div>
-
 </mat-drawer-container>

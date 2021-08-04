@@ -18,15 +18,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon'
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatButtonModule} from '@angular/material/button';
-import { SuppliesComponent } from './pages/supplies/supplies.component'
-
+import { AppRoutingModule } from './app-routing.module';
+import { SuppliesComponent } from './pages/supplies/supplies.component';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MapComponent,
-    SuppliesComponent,
+    SuppliesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,9 @@ import { SuppliesComponent } from './pages/supplies/supplies.component'
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
+    AngularFireModule
   ],
   providers: [],
   bootstrap: [AppComponent]

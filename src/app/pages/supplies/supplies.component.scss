@@ -1,0 +1,83 @@
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+::ng-deep .mat-form-field {
+  display: flex;
+  padding-top: 20px;
+  height: 90px;
+  width: 400px;
+}
+
+mat-form-field-wrapper {
+  padding-top: 18px;
+}
+
+.list-container {
+  padding-top: 90px;
+  padding-bottom: 40px;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+.form-control {
+  width: 300px;
+}
+
+.list {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 150px;
+  height: 75px;
+  margin: 5px;
+}
+
+.search {
+  background-color: rgb(101, 255, 237);
+  display: flex;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.cont {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.video {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.home {
+  margin: 3%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  min-width: 95px;
+}
+
+.nav-button {
+  margin: 10px;
+}
+
+.sidenav {
+  background-color: lightblue;
+}
