@@ -7,7 +7,7 @@ import {SuppliesComponent} from './pages/supplies/supplies.component'
 
 const routes: Routes = [
   {
-    path: 'injuries',
+    path: '',
     component: HomeComponent
   },
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/injuries',
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];

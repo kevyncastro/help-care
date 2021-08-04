@@ -45,7 +45,7 @@
   </mat-card>
 
   <div *ngIf="selected" class="list-container">
-    <div *ngIf="!data">
+    <div class="injury-list" *ngIf="!data">
       <div class="injury-card" (click)="select(item)">
         <mat-card>
           <mat-card-title>No Data - Back</mat-card-title>

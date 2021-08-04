@@ -51,6 +51,7 @@ export class HomeComponent implements OnInit {
         this.video = newData?.video;
       }
     })
+
   }
 
 }
