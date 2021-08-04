@@ -21,7 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { SuppliesComponent } from './pages/supplies/supplies.component';
 import { AngularFireModule } from '@angular/fire';
-
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,8 @@ import { AngularFireModule } from '@angular/fire';
     MatToolbarModule,
     MatButtonModule,
     AppRoutingModule,
-    AngularFireModule
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
