@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "zippelin-7b813": {
+      "hosting": {
+        "first-aid-emergency": [
+          "zippelin-7b813"
+        ]
+      }
+    }
+  }
+}

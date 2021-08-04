@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
     'Head Injuries',
     'Heart Attack',
     'Heat Exhaustion',
-    'Ingestion of Chemicals or Objects',
     'Knee Injury',
     'Laceration',
     'Nosebleed',
@@ -41,6 +40,7 @@ export class HomeComponent implements OnInit {
   ]
 
   public search = '';
+  public showFiller = false;
 
   constructor() { }
 

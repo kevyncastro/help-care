@@ -10,12 +10,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatCardModule } from '@angular/material/card'
 import { PipeModule } from './core/pipes/pipe.module'
 import { FormsModule } from '@angular/forms';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon'
+import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatButtonModule} from '@angular/material/button';
+import { SuppliesComponent } from './pages/supplies/supplies.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MapComponent,
+    SuppliesComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +36,15 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     NgbModule,
     PipeModule,
-    FormsModule
+    FormsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
