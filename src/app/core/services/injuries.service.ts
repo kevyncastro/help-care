@@ -9,10 +9,7 @@ export class InjuriesService {
   constructor(private firestore: AngularFirestore) {
   }
 
-
   subscribeToInjuries() {
-      this.firestore.collection('List').doc('Injrues').snapshotChanges().subscribe((list) => {
-        console.log(list.payload.data());
-      })
+    return  this.firestore.collection('List').doc('Injrues').snapshotChanges()
   }
 }

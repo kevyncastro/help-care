@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InjuriesService } from '../../core/services/injuries.service'
+import { AngularFirestore } from "@angular/fire/firestore";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,45 +9,48 @@ import { InjuriesService } from '../../core/services/injuries.service'
 })
 export class HomeComponent implements OnInit {
 
-  public list = [
-    'Abrasion',
-    'Anaphylaxis',
-    'Asthma',
-    'Avulsion',
-    'Blister',
-    'Burn',
-    'Choking',
-    'Contusion',
-    'Dislocation',
-    'Electric Shock',
-    'Foreign Body',
-    'Fractured Nose',
-    'Fractures',
-    'Head Injuries',
-    'Heart Attack',
-    'Heat Exhaustion',
-    'Knee Injury',
-    'Laceration',
-    'Nosebleed',
-    'Open Wound',
-    'Rotator Cuff Injury',
-    'Seizures',
-    'Skin Rashes',
-    'Sprain',
-    'Strain',
-    'Stroke',
-    'Swelling',
-    'Swollen Muscles',
-    'Traumatic Amputation',
-  ]
+  public list = [];
 
   public search = '';
   public showFiller = false;
+  public selected = false;
 
-  constructor(private injuriesService: InjuriesService) { }
+  public descriptions = [];
+  public title = [];
+  public images = [];
+  public card = [];
+  public noContent = true;
+  public data = null;
+
+  constructor(private injuriesService: InjuriesService, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.injuriesService.subscribeToInjuries()
+    this.getInjuriesList();
+  }
+
+  getInjuriesList() {
+    this.injuriesService.subscribeToInjuries().subscribe((data) => {
+      const newData: any = data.payload.data();
+      console.log(newData);
+      this.list = newData?.List;
+    })
+  }
+
+  select(item: string) {
+    console.log(item);
+    this.selected = !this.selected;
+    this.search = '';
+    this.firestore.collection('Injuries').doc(item).snapshotChanges().subscribe((data) => {
+      if(data) {
+        console.log(data.payload.data());
+        const newData: any = data.payload.data();
+        this.data = newData;
+        this.descriptions = newData?.Description;
+        this.title = newData?.Title;
+        this.images = newData?.images;
+        console.log(this.descriptions);
+      }
+    })
   }
 
 }
