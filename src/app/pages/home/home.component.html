@@ -1,0 +1,15 @@
+
+<div class="search">
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label>Search Injury</mat-label>
+    <input type="text" class="form-control" [(ngModel)]="search" matInput placeholder="Injury...">
+  </mat-form-field>
+</div>
+
+<div class="list-container">
+  <div class="list">
+    <div *ngFor="let item of list | search: search">
+      <mat-card class="card">{{ item }}</mat-card>
+    </div>
+  </div>
+</div>
