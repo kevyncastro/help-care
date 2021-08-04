@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/injuries',
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];
