@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   public noContent = true;
   public data = null;
   public video = null;
+  public injury: string;
 
   constructor(private injuriesService: InjuriesService, private firestore: AngularFirestore) { }
 
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   select(item: string) {
+    this.injury = item;
     this.selected = !this.selected;
     this.search = '';
     this.firestore.collection('Injuries').doc(item).snapshotChanges().subscribe((data) => {

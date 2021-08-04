@@ -38,6 +38,12 @@
     </div>
   </div>
 
+  <mat-card>
+    <mat-card-title>
+
+    </mat-card-title>
+  </mat-card>
+
   <div *ngIf="selected" class="list-container">
     <div *ngIf="!data">
       <div class="injury-card" (click)="select(item)">
@@ -45,6 +51,13 @@
           <mat-card-title>No Data - Back</mat-card-title>
         </mat-card>
       </div>
+    </div>
+    <div class="injury-list">
+      <mat-card class="injury-card">
+        <mat-card-title>
+          {{injury}}
+        </mat-card-title>
+      </mat-card>
     </div>
     <div class="injury-list">
       <div class="injury-card" *ngFor="let description of descriptions | search: search; let i = index" (click)="select(item);">
