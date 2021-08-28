@@ -67,3 +67,5 @@ dist/
 
 # dotenv environment variables file
 .env
+src/environments
+
